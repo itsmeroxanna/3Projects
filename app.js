@@ -1,38 +1,13 @@
-let data = [
-    {
-        name: 'Roxanna',
-        age: '28'
-    },
-    {
-        name: 'Shania',
-        age: '22'
-    },
-    {
-        name: 'Yoshi',
-        age: '6 years'
-    },
-    {
-        name: 'Iku',
-        age: '6 years'
-    },
-    {
-        name: 'Chinchurri',
-        age: '3 years'
-    },
-    {
-        name: 'Ericka',
-        age: '34'
-    },
-    {
-        name: 'Pelusita',
-        age: '14 years'
-    },
-];
+const circle = document.querySelector('#circle')
 
-const info = document.querySelector('#info');
-
-let details = data.map(function(item) {
-    return '<div>' + item.name + ' ' + 'is a ' + item.age + ' old' + '</div>';
+circle.addEventListener('mousecenter', () => {
+    if(!circle.classList.contains('hover')) {
+        circle.classList.add('hover');
+    }
 });
 
-info.innerHTML = details.join('\n');
+circle.addEventListener('mouseLeave', () => {
+    if(circle.classList.contains('hover')) {
+        circle.classList.remove('hover');
+    }
+});
